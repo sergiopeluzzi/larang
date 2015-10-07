@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: Larang
+        psr4_prefix: Larang
         src_path: app
