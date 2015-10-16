@@ -1,6 +1,6 @@
 <?php
 
-namespace Larang;
+namespace Larang\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

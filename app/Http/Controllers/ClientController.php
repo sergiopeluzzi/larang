@@ -5,7 +5,7 @@ namespace Larang\Http\Controllers;
 use Illuminate\Http\Request;
 use Larang\Http\Requests;
 use Larang\Http\Controllers\Controller;
-use Larang\Client;
+use Larang\Models\Client;
 
 class ClientController extends Controller
 {
