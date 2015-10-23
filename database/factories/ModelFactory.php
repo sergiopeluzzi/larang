@@ -31,14 +31,14 @@ $factory->define(Larang\Models\Client::class, function (Faker\Generator $faker) 
     ];
 });
 
-$factory->define(Larang\Models\Client::class, function (Faker\Generator $faker) {
+$factory->define(Larang\Models\Project::class, function (Faker\Generator $faker) {
     return [
-        'owner_id' => $faker->name,
-        'client_id' => $faker->name,
+        'owner_id' => $faker->numberBetween(1, 5),
+        'client_id' => $faker->numberBetween(1, 10),
         'name' => $faker->name,
         'description' => $faker->text(200),
         'progress' => $faker->randomFloat(2, 0, 100),
-        'status' => $faker->randomElements(['Desenvolvimento', 'Análise', 'Finalizado', 'Testes']),
+        'status' => $faker->randomElement(['Desenvolvimento', 'Análise', 'Finalizado', 'Testes']),
         'due_date' => $faker->dateTime,
     ];
 });

@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->integer('client_id', false, true);
             $table->string('name');
             $table->text('description');
-            $table->float('progess')->default(0.00);
+            $table->float('progress')->default(0.00);
             $table->string('status');
             $table->timestamp('due_date');
             $table->timestamps();
