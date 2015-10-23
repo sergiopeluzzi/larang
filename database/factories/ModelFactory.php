@@ -38,7 +38,7 @@ $factory->define(Larang\Models\Project::class, function (Faker\Generator $faker)
         'name' => $faker->name,
         'description' => $faker->text(200),
         'progress' => $faker->randomFloat(2, 0, 100),
-        'status' => $faker->randomElement(['Desenvolvimento', 'Análise', 'Finalizado', 'Testes']),
+        'status' => $faker->randomElement(['Desenvolvimento', 'Analise', 'Finalizado', 'Testes']),
         'due_date' => $faker->dateTime,
     ];
 });
