@@ -6,9 +6,31 @@ use Illuminate\Http\Request;
 use Larang\Http\Requests;
 use Larang\Http\Controllers\Controller;
 use Larang\Models\Client;
+use Larang\Repositories\ClientRepository;
+use Larang\Services\ClientService;
 
 class ClientController extends Controller
 {
+    /**
+     * @var ClientRepository
+     */
+    private $repository;
+
+    /**
+     * @var ClientService
+     */
+    private $service;
+
+    /**
+     * @param ClientRepository $repository
+     * @param ClientService $service
+     */
+    public function __construct(ClientRepository $repository, ClientService $service)
+    {
+        $this->repository = $repository;
+        $this->service = $service;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +38,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return Client::all();
+        return $this->repository->all();
     }
 
     /**
@@ -27,7 +49,7 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        return Client::create($request->all());
+        return $this->service->create($request->all());
     }
 
     /**
@@ -38,7 +60,7 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        return Client::find($id);
+        return $this->repository->find($id);
     }
 
     /**
@@ -50,7 +72,7 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Client::find($id)->update($request->all());
+        $this->service->find($id)->update($request->all());
     }
 
     /**
@@ -61,6 +83,6 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-        Client::find($id)->delete();
+        $this->repository->find($id)->delete();
     }
 }

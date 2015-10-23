@@ -146,6 +146,7 @@ return [
         Larang\Providers\AuthServiceProvider::class,
         Larang\Providers\EventServiceProvider::class,
         Larang\Providers\RouteServiceProvider::class,
+        Larang\Providers\LarangRepositoryProvider::class,
 
     ],
 
