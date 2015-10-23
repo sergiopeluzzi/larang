@@ -4,8 +4,6 @@ namespace Larang\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Larang\Http\Requests;
-use Larang\Http\Controllers\Controller;
-use Larang\Models\Client;
 use Larang\Repositories\ClientRepository;
 use Larang\Services\ClientService;
 
@@ -72,7 +70,7 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->service->find($id)->update($request->all());
+        $this->service->update($request->all(), $id);
     }
 
     /**

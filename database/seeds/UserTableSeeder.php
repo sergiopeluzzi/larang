@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ClientTableSeeder extends Seeder
+class UserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class ClientTableSeeder extends Seeder
      */
     public function run()
     {
-        \Larang\Models\Client::truncate();
-        factory(\Larang\Models\Client::class, 10)->create();
+        \Larang\Models\User::truncate();
+        factory(\Larang\Models\User::class, 5)->create();
     }
 }

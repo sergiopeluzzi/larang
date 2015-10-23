@@ -24,5 +24,6 @@ class LarangRepositoryProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(\Larang\Repositories\ClientRepository::class, \Larang\Repositories\ClientRepositoryEloquent::class);
+        $this->app->bind(\Larang\Repositories\ProjectRepository::class, \Larang\Repositories\ProjectRepositoryEloquent::class);
     }
 }

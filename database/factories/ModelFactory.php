@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(Larang\User::class, function (Faker\Generator $faker) {
+$factory->define(Larang\Models\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
@@ -20,7 +20,7 @@ $factory->define(Larang\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(Larang\Client::class, function (Faker\Generator $faker) {
+$factory->define(Larang\Models\Client::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'responsible' => $faker->name,
@@ -28,5 +28,17 @@ $factory->define(Larang\Client::class, function (Faker\Generator $faker) {
         'phone' => $faker->phoneNumber,
         'address' => $faker->address,
         'obs' => $faker->sentence,
+    ];
+});
+
+$factory->define(Larang\Models\Client::class, function (Faker\Generator $faker) {
+    return [
+        'owner_id' => $faker->name,
+        'client_id' => $faker->name,
+        'name' => $faker->name,
+        'description' => $faker->text(200),
+        'progress' => $faker->randomFloat(2, 0, 100),
+        'status' => $faker->randomElements(['Desenvolvimento', 'Análise', 'Finalizado', 'Testes']),
+        'due_date' => $faker->dateTime,
     ];
 });

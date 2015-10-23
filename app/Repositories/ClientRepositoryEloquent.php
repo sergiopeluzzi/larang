@@ -8,7 +8,6 @@
 
 namespace Larang\Repositories;
 
-
 use Larang\Models\Client;
 use Prettus\Repository\Eloquent\BaseRepository;
 
