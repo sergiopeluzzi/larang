@@ -16,9 +16,9 @@ class Project extends Model
         'due_date'
     ];
 
-    public function user()
+    public function owner()
     {
-        return $this->belongsTo(User::class, 'owner_id');
+        return $this->belongsTo(User::class);
     }
 
     public function client()
@@ -26,4 +26,8 @@ class Project extends Model
         return $this->belongsTo(Client::class);
     }
 
+    public function notes()
+    {
+        return $this->hasMany(ProjectNote::class);
+    }
 }

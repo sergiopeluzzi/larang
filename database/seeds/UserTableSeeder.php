@@ -11,7 +11,7 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        \Larang\Models\User::truncate();
+        //\Larang\Models\User::truncate();
         factory(\Larang\Models\User::class, 5)->create();
     }
 }

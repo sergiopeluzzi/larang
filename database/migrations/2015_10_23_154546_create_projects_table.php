@@ -15,7 +15,9 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('owner_id', false, true);
+            $table->foreign('owner_id')->references('id')->on('users');
             $table->integer('client_id', false, true);
+            $table->foreign('client_id')->references('id')->on('clients');
             $table->string('name');
             $table->text('description');
             $table->float('progress')->default(0.00);

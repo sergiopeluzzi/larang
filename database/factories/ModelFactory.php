@@ -35,10 +35,18 @@ $factory->define(Larang\Models\Project::class, function (Faker\Generator $faker)
     return [
         'owner_id' => $faker->numberBetween(1, 5),
         'client_id' => $faker->numberBetween(1, 10),
-        'name' => $faker->name,
+        'name' => $faker->word,
         'description' => $faker->text(200),
         'progress' => $faker->randomFloat(2, 0, 100),
         'status' => $faker->randomElement(['Desenvolvimento', 'Analise', 'Finalizado', 'Testes']),
         'due_date' => $faker->dateTime,
+    ];
+});
+
+$factory->define(Larang\Models\ProjectNote::class, function (Faker\Generator $faker) {
+    return [
+        'project_id' => $faker->numberBetween(1, 5),
+        'title' => $faker->word,
+        'note' => $faker->sentence(),
     ];
 });
